@@ -15,6 +15,7 @@ namespace NetBlog.Data.Concreate.EntityFramework.Contexts
     {
         public EfArticleRepository(DbContext context) : base(context)
         {
+
         }
 
     }
