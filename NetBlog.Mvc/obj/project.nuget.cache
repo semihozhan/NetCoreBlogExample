@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "C1Ej0Uv0PY64kM8Vn4zkl5ULxZHZukskSccqG9QFvEEtPAeosaP9roIWD3hE6u3msfrf0ta4yuJOhsZo3kR3kA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Mvc\\NetBlog.Mvc.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
