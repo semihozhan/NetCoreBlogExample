@@ -30,6 +30,20 @@ namespace NetBlog.Data.Concreate.EntityFramework.Mappings
             builder.Property(r => r.IsDeleted).IsRequired();
 
             builder.ToTable("Roles");
+
+            builder.HasData(new Role { 
+             Id=1,
+             Name="Admin",
+             Description="Tüm Haklara Sahip",
+             IsActive=true,
+             IsDeleted=false,
+             CreatedByName="InitialCreate",
+             CreatedOn=DateTime.Now,
+             ModifiedByName="InitialCreate",
+             ModifiedOn=DateTime.Now,
+             Note="Admin"
+       
+            });
         }
     }
 }

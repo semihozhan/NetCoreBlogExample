@@ -41,6 +41,24 @@ namespace NetBlog.Data.Concreate.EntityFramework.Mappings
             builder.Property(u => u.IsActive).IsRequired();
             builder.Property(u => u.IsDeleted).IsRequired();
             builder.ToTable("Users");
+
+            builder.HasData(new User {
+            Id=1,
+            RoleID=1,
+            Firstname="Semih",
+            Lastname="Ozhan",
+            username="semihozhan",
+            Email="semihozhan@yandex.com",
+            IsActive=true,
+            IsDeleted=false,
+            CreatedByName="InitialCreate",
+            CreatedOn=DateTime.Now,
+            ModifiedByName="InitialCreate",
+            ModifiedOn=DateTime.Now,
+            Description="First User",
+            Note="Admin",
+            PasswordHash= Encoding.ASCII.GetBytes("e10adc3949ba59abbe56e057f20f883e")
+            });
         }
     }
 }

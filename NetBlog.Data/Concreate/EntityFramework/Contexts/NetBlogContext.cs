@@ -20,7 +20,7 @@ namespace NetBlog.Data.Concreate.EntityFramework.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=localhost; Database=WinWin; uid=sa ; pwd=S3mih.12");
+            optionsBuilder.UseSqlServer("Server=localhost; Database=NetBlog; uid=sa ; pwd=S3mih.12");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
