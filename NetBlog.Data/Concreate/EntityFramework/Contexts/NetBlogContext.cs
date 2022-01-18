@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NetBlog.Data.Concreate.EntityFramework.Mappings;
 using NetBlog.Entities.Concreate;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,15 @@ namespace NetBlog.Data.Concreate.EntityFramework.Contexts
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("Server=localhost; Database=WinWin; uid=sa ; pwd=S3mih.12");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ArticleMap());
+            modelBuilder.ApplyConfiguration(new CategoryMap());
+            modelBuilder.ApplyConfiguration(new CommentMap());
+            modelBuilder.ApplyConfiguration(new RoleMap());
+            modelBuilder.ApplyConfiguration(new UserMap());
         }
 
     }
