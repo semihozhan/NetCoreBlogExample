@@ -1,0 +1,15 @@
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\bin\Debug\net5.0\NetBlog.Entities.deps.json
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\bin\Debug\net5.0\NetBlog.Entities.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\bin\Debug\net5.0\ref\NetBlog.Entities.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\bin\Debug\net5.0\NetBlog.Entities.pdb
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\bin\Debug\net5.0\NetBlog.Shared.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\bin\Debug\net5.0\NetBlog.Shared.pdb
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\obj\Debug\net5.0\NetBlog.Entities.csproj.AssemblyReference.cache
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\obj\Debug\net5.0\NetBlog.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\obj\Debug\net5.0\NetBlog.Entities.AssemblyInfoInputs.cache
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\obj\Debug\net5.0\NetBlog.Entities.AssemblyInfo.cs
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\obj\Debug\net5.0\NetBlog.Entities.csproj.CoreCompileInputs.cache
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\obj\Debug\net5.0\NetBlog.Entities.csproj.CopyComplete
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\obj\Debug\net5.0\NetBlog.Entities.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\obj\Debug\net5.0\ref\NetBlog.Entities.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Entities\obj\Debug\net5.0\NetBlog.Entities.pdb

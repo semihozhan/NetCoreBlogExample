@@ -65,7 +65,7 @@ namespace NetBlog.Data.Concreate.EntityFramework.Mappings
                 ModifiedByName = "InitialCreate",
                 ModifiedOn = DateTime.Now,
                 Note = "Javascript",
-            },
+            }
             );
         }
     }
