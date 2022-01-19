@@ -27,6 +27,46 @@ namespace NetBlog.Data.Concreate.EntityFramework.Mappings
             builder.Property(c => c.IsActive).IsRequired();
             builder.Property(c => c.IsDeleted).IsRequired();
             builder.ToTable("Comments");
+
+
+            builder.HasData(new Comment { 
+                Id=1,
+                ArticleID=1,
+                Text="C# comment example",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedOn = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedOn = DateTime.Now,
+                Note = "Javascript",
+            },
+            new Comment
+            {
+                Id = 2,
+                ArticleID = 2,
+                Text = "C++ comment example",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedOn = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedOn = DateTime.Now,
+                Note = "Javascript",
+            }, new Comment
+            {
+                Id = 3,
+                ArticleID = 3,
+                Text = "Javascript comment example",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedOn = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedOn = DateTime.Now,
+                Note = "Javascript",
+            },
+            );
         }
     }
 }

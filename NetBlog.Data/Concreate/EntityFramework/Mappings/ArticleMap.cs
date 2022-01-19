@@ -42,6 +42,75 @@ namespace NetBlog.Data.Concreate.EntityFramework.Mappings
             builder.HasOne<Category>(a => a.Category).WithMany(c=>c.Articles).HasForeignKey(a=>a.CategoryId);
             builder.HasOne<User>(a => a.User).WithMany(u => u.Articles).HasForeignKey(a => a.UserId);
             builder.ToTable("Articles");
+
+            builder.HasData(new Article { 
+                Id=1,
+                CategoryId=1,
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedOn = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedOn = DateTime.Now,
+                Title="C# 9.0 ve .net 5",
+                Content= "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
+                Thumbnail="default.jpg",
+                SeoDescription= "C# 9.0 ve .net 5",
+                SeoTags= "C# 9.0,.net 5",
+                SeoAuthor="Admin",
+                Date=DateTime.Now,
+                Note= "C# 9.0 ve .net 5",
+                UserId=1,
+                ViewsCount=130,
+                CommentCount=1
+
+            }, new Article
+            {
+                Id = 2,
+                CategoryId = 2,
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedOn = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedOn = DateTime.Now,
+                Title = "C++ 9.0 ve .net 5",
+                Content = "Yinelenen bir sayfa içeriğinin okuyucunun dikkatini dağıttığı bilinen bir gerçektir. Lorem Ipsum kullanmanın amacı, sürekli 'buraya metin gelecek, buraya metin gelecek' yazmaya kıyasla daha dengeli bir harf dağılımı sağlayarak okunurluğu artırmasıdır. Şu anda birçok masaüstü yayıncılık paketi ve web sayfa düzenleyicisi, varsayılan mıgır metinler olarak Lorem Ipsum kullanmaktadır. Ayrıca arama motorlarında 'lorem ipsum' anahtar sözcükleri ile arama yapıldığında henüz tasarım aşamasında olan çok sayıda site listelenir. Yıllar içinde, bazen kazara, bazen bilinçli olarak (örneğin mizah katılarak), çeşitli sürümleri geliştirilmiştir.",
+                Thumbnail = "default.jpg",
+                SeoDescription = "C++ 9.0 ve .net 5",
+                SeoTags = "C++ 9.0,.net 5",
+                SeoAuthor = "Admin",
+                Date = DateTime.Now,
+                Note = "C# 9.0 ve .net 5",
+                UserId = 1,
+                ViewsCount = 140,
+                CommentCount = 1
+
+            }, new Article
+            {
+                Id = 3,
+                CategoryId = 3,
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedOn = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedOn = DateTime.Now,
+                Title = "Javascript ES2019",
+                Content = "Javascript Yinelenen bir sayfa içeriğinin okuyucunun dikkatini dağıttığı bilinen bir gerçektir. Lorem Ipsum kullanmanın amacı, sürekli 'buraya metin gelecek, buraya metin gelecek' yazmaya kıyasla daha dengeli bir harf dağılımı sağlayarak okunurluğu artırmasıdır. Şu anda birçok masaüstü yayıncılık paketi ve web sayfa düzenleyicisi, varsayılan mıgır metinler olarak Lorem Ipsum kullanmaktadır. Ayrıca arama motorlarında 'lorem ipsum' anahtar sözcükleri ile arama yapıldığında henüz tasarım aşamasında olan çok sayıda site listelenir. Yıllar içinde, bazen kazara, bazen bilinçli olarak (örneğin mizah katılarak), çeşitli sürümleri geliştirilmiştir.",
+                Thumbnail = "default.jpg",
+                SeoDescription = "Javascript ES2019",
+                SeoTags = "Javascript",
+                SeoAuthor = "Admin",
+                Date = DateTime.Now,
+                Note = "Javascript",
+                UserId = 1,
+                ViewsCount = 70,
+                CommentCount = 1
+
+            }
+
+            );
         }
     }
 }

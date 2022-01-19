@@ -28,6 +28,44 @@ namespace NetBlog.Data.Concreate.EntityFramework.Mappings
             builder.Property(c => c.IsDeleted).IsRequired();
             builder.ToTable("Categories");
 
+            builder.HasData(new Category { 
+                Id=1,
+                Name="c#",
+                Description="c# Category",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedOn = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedOn = DateTime.Now,
+                Note="c#",
+            }, new Category
+            {
+                Id = 2,
+                Name = "c++",
+                Description = "c++ Category",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedOn = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedOn = DateTime.Now,
+                Note = "c++",
+            }, new Category
+            {
+                Id = 3,
+                Name = "Javascript",
+                Description = "Javascript Category",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",
+                CreatedOn = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedOn = DateTime.Now,
+                Note = "Javascript",
+            }
+            );
+
         }
     }
 }
