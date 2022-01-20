@@ -11,23 +11,23 @@ namespace NetBlog.Entities.Dtos
     public class CategoryAddDto
     {
         [DisplayName("Kategori Adı")]
-        [Required(ErrorMessage ="{0} Boş Olamaz")]
-        [MaxLength(70,ErrorMessage ="{0} Max {1} Karakter Olmalı")]
-        [MinLength(2,ErrorMessage ="{0} Min {0} Karakter Olmalı")]
+        [Required(ErrorMessage ="{0} Boş Olmamalıdır")]
+        [MaxLength(70,ErrorMessage ="{0} Max {1} Karakter Olmalıdır")]
+        [MinLength(2,ErrorMessage = "{0} Min {0} Karakter Olmalıdır")]
         public string Name { get; set; }
 
         [DisplayName("Kategori Açıklaması")]
-        [MaxLength(500, ErrorMessage = "{0} Max {1} Karakter Olmalı")]
-        [MinLength(2, ErrorMessage = "{0} Min {0} Karakter Olmalı")]
+        [MaxLength(500, ErrorMessage = "{0} Max {1} Karakter Olmalıdır")]
+        [MinLength(2, ErrorMessage = "{0} Min {0} Karakter Olmalıdır")]
         public string Description { get; set; }
 
         [DisplayName("Kategori Notu")]
-        [MaxLength(100, ErrorMessage = "{0} Max {1} Karakter Olmalı")]
-        [MinLength(2, ErrorMessage = "{0} Min {0} Karakter Olmalı")]
+        [MaxLength(100, ErrorMessage = "{0} Max {1} Karakter Olmalıdır")]
+        [MinLength(2, ErrorMessage = "{0} Min {0} Karakter Olmalıdır")]
         public string Note { get; set; }
 
         [DisplayName("Kategori Aktif mi ?")]
-        [Required(ErrorMessage = "{0} Boş Olamaz")]
+        [Required(ErrorMessage = "{0} Boş Olmamalıdır")]
         public bool IsActive { get; set; }
 
     }
