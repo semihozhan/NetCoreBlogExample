@@ -15,10 +15,12 @@ namespace NetBlog.Services.Abstract
 
         Task<IDataResult<IList<Category>>> GetAll();
 
+        Task<IDataResult<IList<Category>>> GetAllByNonDeleted();
+
         Task<IResult> Add(CategoryAddDto category,string CreatedByName);
 
         Task<IResult> Update(CategoryUpdateDto category,string ModifiedByName);
-        Task<IResult> Delete(int categoryID);
+        Task<IResult> Delete(int categoryID, string ModifiedByName);
 
         Task<IResult> HardDelete(int categoryID);
     }

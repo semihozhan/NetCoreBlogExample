@@ -16,11 +16,6 @@ namespace NetBlog.Shared.Utilities.Results.Concreate
             ResultStatus = resultStatus;
             Data = data;
         }
-        public DataResult(ResultStatus resultStatus, T data)
-        {
-            ResultStatus = resultStatus;
-            Data = data;
-        }
         public DataResult(ResultStatus resultStatus, string message, T data)
         {
             ResultStatus = resultStatus;

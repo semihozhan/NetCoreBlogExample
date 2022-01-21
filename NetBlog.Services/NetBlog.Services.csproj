@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NetBlog.Data\NetBlog.Data.csproj" />
     <ProjectReference Include="..\NetBlog.Entities\NetBlog.Entities.csproj" />
   </ItemGroup>
 
