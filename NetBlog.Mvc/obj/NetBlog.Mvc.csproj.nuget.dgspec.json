@@ -4,6 +4,138 @@
     "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Mvc\\NetBlog.Mvc.csproj": {}
   },
   "projects": {
+    "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Data\\NetBlog.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Data\\NetBlog.Data.csproj",
+        "projectName": "NetBlog.Data",
+        "projectPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Data\\NetBlog.Data.csproj",
+        "packagesPath": "C:\\Users\\semih.ozhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\semih.ozhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Entities\\NetBlog.Entities.csproj": {
+                "projectPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Entities\\NetBlog.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Entities\\NetBlog.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Entities\\NetBlog.Entities.csproj",
+        "projectName": "NetBlog.Entities",
+        "projectPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Entities\\NetBlog.Entities.csproj",
+        "packagesPath": "C:\\Users\\semih.ozhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\semih.ozhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Shared\\NetBlog.Shared.csproj": {
+                "projectPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Shared\\NetBlog.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Mvc\\NetBlog.Mvc.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +159,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Services\\NetBlog.Services.csproj": {
+                "projectPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Services\\NetBlog.Services.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -59,6 +195,133 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Services\\NetBlog.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Services\\NetBlog.Services.csproj",
+        "projectName": "NetBlog.Services",
+        "projectPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Services\\NetBlog.Services.csproj",
+        "packagesPath": "C:\\Users\\semih.ozhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\semih.ozhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Data\\NetBlog.Data.csproj": {
+                "projectPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Data\\NetBlog.Data.csproj"
+              },
+              "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Entities\\NetBlog.Entities.csproj": {
+                "projectPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Entities\\NetBlog.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Shared\\NetBlog.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Shared\\NetBlog.Shared.csproj",
+        "projectName": "NetBlog.Shared",
+        "projectPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Shared\\NetBlog.Shared.csproj",
+        "packagesPath": "C:\\Users\\semih.ozhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\semih.ozhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
