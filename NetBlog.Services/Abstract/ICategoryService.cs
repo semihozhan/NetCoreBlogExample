@@ -11,11 +11,13 @@ namespace NetBlog.Services.Abstract
 {
     public interface ICategoryService
     {
-        Task<IDataResult<Category>> Get(int categoryID);
+        Task<IDataResult<CategoryDto>> Get(int categoryID);
 
-        Task<IDataResult<IList<Category>>> GetAll();
+        Task<IDataResult<CategoryListDto>> GetAll();
 
-        Task<IDataResult<IList<Category>>> GetAllByNonDeleted();
+        Task<IDataResult<CategoryListDto>> GetAllByNonDeleted();
+
+        Task<IDataResult<CategoryListDto>> GetAllByNonDeletedandActive();
 
         Task<IResult> Add(CategoryAddDto category,string CreatedByName);
 
