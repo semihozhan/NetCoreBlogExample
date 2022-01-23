@@ -404,3 +404,4 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Raz
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_LayoutJsPartial.cshtml.g.cs
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_LayoutSideBarNavPartial.cshtml.g.cs
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_categoryAddPartial.cshtml.g.cs
