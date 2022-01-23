@@ -30,8 +30,8 @@ namespace NetBlog.Services.Concreate
             var categorys = _mapper.Map<Category>(category);
             categorys.CreatedByName = CreatedByName;
             categorys.ModifiedByName = CreatedByName;
-            await _unitOfWork.Categories.AddAync(categorys).ContinueWith(t=> _unitOfWork.SaveAsync());
-            //await _unitOfWork.SaveAsync();
+            await _unitOfWork.Categories.AddAync(categorys);
+            await _unitOfWork.SaveAsync();
             return new Result(ResultStatus.Success, $"{category.Name} adlı kategori başarı ile eklenmiştir.");
         }
 
@@ -45,7 +45,8 @@ namespace NetBlog.Services.Concreate
                 category.ModifiedByName = ModifiedByName;
                 category.ModifiedOn = DateTime.Now;
 
-                await _unitOfWork.Categories.UpdateAsync(category).ContinueWith(t => _unitOfWork.SaveAsync());
+                await _unitOfWork.Categories.UpdateAsync(category);
+                await _unitOfWork.SaveAsync();
                 return new Result(ResultStatus.Success, $"{category.Name} adlı kategori başarı ile silinmiştir.");
             }
             return new Result(ResultStatus.Error, "Böyle bir kategori bulunamadı");
@@ -72,10 +73,15 @@ namespace NetBlog.Services.Concreate
                 return new DataResult<CategoryListDto>(ResultStatus.Success, new CategoryListDto
                 {
                     Categories = category,
-                    ResultStatus = ResultStatus.Success
+                    ResultStatus = ResultStatus.Success,
+                    Message = "Kategori Listelendi"
                 });
             }
-            return new DataResult<CategoryListDto>(ResultStatus.Error, "Böyle bir kategori bulunamadı", null);
+            return new DataResult<CategoryListDto>(ResultStatus.Error, "Böyle bir kategori bulunamadı", new CategoryListDto {
+            Categories=null,
+            ResultStatus=ResultStatus.Error,
+            Message= "Böyle bir kategori bulunamadı"
+            });
         }
 
         public async Task<IDataResult<CategoryListDto>> GetAllByNonDeleted()
@@ -111,7 +117,8 @@ namespace NetBlog.Services.Concreate
             var category = await _unitOfWork.Categories.GetAsync(c => c.Id == categoryID);
             if (category != null)
             {
-                await _unitOfWork.Categories.DeleteAsync(category).ContinueWith(t => _unitOfWork.SaveAsync());
+                await _unitOfWork.Categories.DeleteAsync(category);
+                await _unitOfWork.SaveAsync();
                 return new Result(ResultStatus.Success, $"{category.Name} adlı kategori başarı ile silinmiştir.");
             }
             return new Result(ResultStatus.Error, "Böyle bir kategori bulunamadı");
@@ -121,7 +128,8 @@ namespace NetBlog.Services.Concreate
         {
             var categorys = _mapper.Map<Category>(categorydto);
             categorys.ModifiedByName = ModifiedByName;
-            await _unitOfWork.Categories.UpdateAsync(categorys).ContinueWith(t => _unitOfWork.SaveAsync());
+            await _unitOfWork.Categories.UpdateAsync(categorys);
+            await _unitOfWork.SaveAsync();
             return new Result(ResultStatus.Success, $"{categorydto.Name} adlı kategori başarı ile güncellenmiştir.");
         }
 
