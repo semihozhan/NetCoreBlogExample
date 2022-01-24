@@ -405,3 +405,5 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Raz
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_LayoutSideBarNavPartial.cshtml.g.cs
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_categoryAddPartial.cshtml.g.cs
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
