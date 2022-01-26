@@ -13,6 +13,8 @@ namespace NetBlog.Services.Abstract
     {
         Task<IDataResult<CategoryDto>> Get(int categoryID);
 
+        Task<IDataResult<CategoryUpdateDto>> GetCategoryUpdateDto(int categoryID);
+
         Task<IDataResult<CategoryListDto>> GetAll();
 
         Task<IDataResult<CategoryListDto>> GetAllByNonDeleted();
@@ -22,7 +24,7 @@ namespace NetBlog.Services.Abstract
         Task<IDataResult<CategoryDto>> Add(CategoryAddDto category,string CreatedByName);
 
         Task<IDataResult<CategoryDto>> Update(CategoryUpdateDto category,string ModifiedByName);
-        Task<IResult> Delete(int categoryID, string ModifiedByName);
+        Task<IDataResult<CategoryDto>> Delete(int categoryID, string ModifiedByName);
 
         Task<IResult> HardDelete(int categoryID);
     }
