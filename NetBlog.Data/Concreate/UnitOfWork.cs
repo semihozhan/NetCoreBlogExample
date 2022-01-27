@@ -1,5 +1,4 @@
 ﻿using NetBlog.Data.Abstract;
-using NetBlog.Data.Abstract.EntityFramework.Contexts;
 using NetBlog.Data.Concreate.EntityFramework.Contexts;
 using System;
 using System.Collections.Generic;
@@ -15,8 +14,6 @@ namespace NetBlog.Data.Concreate
         private readonly EfArticleRepository _ArticleRepository;
         private readonly EfCategoryRepository _CategoryRepository;
         private readonly EfCommentRepository _CommentRepository;
-        private readonly EfRoleRepository _RoleRepository;
-        private readonly EfUserRepository _UserRepository;
 
         public UnitOfWork(NetBlogContext context)
         {
@@ -28,9 +25,7 @@ namespace NetBlog.Data.Concreate
 
         public ICommentRepository Comments => _CommentRepository ?? new EfCommentRepository(_context);
 
-        public IRoleRepository Roles => _RoleRepository ?? new EfRoleRepository(_context);
-
-        public IUserRepository Users => _UserRepository ?? new EfUserRepository(_context);
+     
 
         public async ValueTask DisposeAsync()
         {

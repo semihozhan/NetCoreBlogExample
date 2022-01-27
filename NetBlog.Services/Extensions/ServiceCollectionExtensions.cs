@@ -2,6 +2,7 @@
 using NetBlog.Data.Abstract;
 using NetBlog.Data.Concreate;
 using NetBlog.Data.Concreate.EntityFramework.Contexts;
+using NetBlog.Entities.Concreate;
 using NetBlog.Services.Abstract;
 using NetBlog.Services.Concreate;
 using System;
@@ -17,6 +18,20 @@ namespace NetBlog.Services.Extensions
         public static IServiceCollection LoadMyService(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddDbContext<NetBlogContext>();
+            serviceCollection.AddIdentity<User,Role>(options => {
+                //password option
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequiredUniqueChars = 0;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                //username and mail
+                options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+                options.User.RequireUniqueEmail=true;
+
+
+            }).AddEntityFrameworkStores<NetBlogContext>();
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped<ICategoryService, CategoryManager>();
             serviceCollection.AddScoped<IArticleService, ArticleManager>();

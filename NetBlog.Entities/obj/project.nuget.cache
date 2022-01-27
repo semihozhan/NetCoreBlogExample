@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hQxmupZYSFxRTTO4i82EHUeFpY9d3O4v9Zi3YFSMTZDNlMNqss9YdTvaWzwgWvFPf4M5y4n9VjCuFYGTudEH1Q==",
+  "dgSpecHash": "UBeP3z2a35TIy3+NH4SluMutFdcd8pycRhh/Rqxw17cfmc10gCSQluRjZh9gkKTjoU/H42R+nWIyV9GcRgnRmg==",
   "success": true,
   "projectFilePath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Entities\\NetBlog.Entities.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,8 @@
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
-    "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.2.0\\microsoft.aspnetcore.cryptography.internal.2.2.0.nupkg.sha512",
+    "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.13\\microsoft.aspnetcore.cryptography.internal.5.0.13.nupkg.sha512",
+    "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.13\\microsoft.aspnetcore.cryptography.keyderivation.5.0.13.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.aspnetcore.dataprotection.abstractions\\2.2.0\\microsoft.aspnetcore.dataprotection.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.abstractions\\2.2.0\\microsoft.aspnetcore.diagnostics.abstractions.2.2.0.nupkg.sha512",
@@ -64,6 +65,8 @@
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.extensions.fileproviders.composite\\2.2.0\\microsoft.extensions.fileproviders.composite.2.2.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\2.2.0\\microsoft.extensions.filesystemglobbing.2.2.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.2.0\\microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.13\\microsoft.extensions.identity.core.5.0.13.nupkg.sha512",
+    "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.13\\microsoft.extensions.identity.stores.5.0.13.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.extensions.localization\\2.2.0\\microsoft.extensions.localization.2.2.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\2.2.0\\microsoft.extensions.localization.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",

@@ -53,8 +53,6 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\ref
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cors.dll
-C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
@@ -138,8 +136,6 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\ref
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.Extensions.Http.dll
-C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Core.dll
-C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
@@ -408,3 +404,9 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Raz
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_categoryUpdatePartial.cshtml.g.cs
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs

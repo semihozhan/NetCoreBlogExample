@@ -103,74 +103,6 @@ namespace NetBlog.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Articles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            CommentCount = 1,
-                            Content = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
-                            CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 871, DateTimeKind.Local).AddTicks(5166),
-                            Date = new DateTime(2022, 1, 19, 19, 44, 54, 871, DateTimeKind.Local).AddTicks(6665),
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 871, DateTimeKind.Local).AddTicks(5597),
-                            Note = "C# 9.0 ve .net 5",
-                            SeoAuthor = "Admin",
-                            SeoDescription = "C# 9.0 ve .net 5",
-                            SeoTags = "C# 9.0,.net 5",
-                            Thumbnail = "default.jpg",
-                            Title = "C# 9.0 ve .net 5",
-                            UserId = 1,
-                            ViewsCount = 130
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 2,
-                            CommentCount = 1,
-                            Content = "Yinelenen bir sayfa içeriğinin okuyucunun dikkatini dağıttığı bilinen bir gerçektir. Lorem Ipsum kullanmanın amacı, sürekli 'buraya metin gelecek, buraya metin gelecek' yazmaya kıyasla daha dengeli bir harf dağılımı sağlayarak okunurluğu artırmasıdır. Şu anda birçok masaüstü yayıncılık paketi ve web sayfa düzenleyicisi, varsayılan mıgır metinler olarak Lorem Ipsum kullanmaktadır. Ayrıca arama motorlarında 'lorem ipsum' anahtar sözcükleri ile arama yapıldığında henüz tasarım aşamasında olan çok sayıda site listelenir. Yıllar içinde, bazen kazara, bazen bilinçli olarak (örneğin mizah katılarak), çeşitli sürümleri geliştirilmiştir.",
-                            CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 871, DateTimeKind.Local).AddTicks(7499),
-                            Date = new DateTime(2022, 1, 19, 19, 44, 54, 871, DateTimeKind.Local).AddTicks(7505),
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 871, DateTimeKind.Local).AddTicks(7502),
-                            Note = "C# 9.0 ve .net 5",
-                            SeoAuthor = "Admin",
-                            SeoDescription = "C++ 9.0 ve .net 5",
-                            SeoTags = "C++ 9.0,.net 5",
-                            Thumbnail = "default.jpg",
-                            Title = "C++ 9.0 ve .net 5",
-                            UserId = 1,
-                            ViewsCount = 140
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 3,
-                            CommentCount = 1,
-                            Content = "Javascript Yinelenen bir sayfa içeriğinin okuyucunun dikkatini dağıttığı bilinen bir gerçektir. Lorem Ipsum kullanmanın amacı, sürekli 'buraya metin gelecek, buraya metin gelecek' yazmaya kıyasla daha dengeli bir harf dağılımı sağlayarak okunurluğu artırmasıdır. Şu anda birçok masaüstü yayıncılık paketi ve web sayfa düzenleyicisi, varsayılan mıgır metinler olarak Lorem Ipsum kullanmaktadır. Ayrıca arama motorlarında 'lorem ipsum' anahtar sözcükleri ile arama yapıldığında henüz tasarım aşamasında olan çok sayıda site listelenir. Yıllar içinde, bazen kazara, bazen bilinçli olarak (örneğin mizah katılarak), çeşitli sürümleri geliştirilmiştir.",
-                            CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 871, DateTimeKind.Local).AddTicks(7512),
-                            Date = new DateTime(2022, 1, 19, 19, 44, 54, 871, DateTimeKind.Local).AddTicks(7516),
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 871, DateTimeKind.Local).AddTicks(7514),
-                            Note = "Javascript",
-                            SeoAuthor = "Admin",
-                            SeoDescription = "Javascript ES2019",
-                            SeoTags = "Javascript",
-                            Thumbnail = "default.jpg",
-                            Title = "Javascript ES2019",
-                            UserId = 1,
-                            ViewsCount = 70
-                        });
                 });
 
             modelBuilder.Entity("NetBlog.Entities.Concreate.Category", b =>
@@ -223,12 +155,12 @@ namespace NetBlog.Data.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 874, DateTimeKind.Local).AddTicks(9066),
+                            CreatedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(1716),
                             Description = "c# Category",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 874, DateTimeKind.Local).AddTicks(9079),
+                            ModifiedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2320),
                             Name = "c#",
                             Note = "c#"
                         },
@@ -236,12 +168,12 @@ namespace NetBlog.Data.Migrations
                         {
                             Id = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 874, DateTimeKind.Local).AddTicks(9094),
+                            CreatedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2864),
                             Description = "c++ Category",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 874, DateTimeKind.Local).AddTicks(9096),
+                            ModifiedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2866),
                             Name = "c++",
                             Note = "c++"
                         },
@@ -249,12 +181,12 @@ namespace NetBlog.Data.Migrations
                         {
                             Id = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 874, DateTimeKind.Local).AddTicks(9100),
+                            CreatedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2872),
                             Description = "Javascript Category",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 874, DateTimeKind.Local).AddTicks(9102),
+                            ModifiedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2874),
                             Name = "Javascript",
                             Note = "Javascript"
                         });
@@ -305,47 +237,6 @@ namespace NetBlog.Data.Migrations
                     b.HasIndex("ArticleID");
 
                     b.ToTable("Comments");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ArticleID = 1,
-                            CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 876, DateTimeKind.Local).AddTicks(9458),
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 876, DateTimeKind.Local).AddTicks(9472),
-                            Note = "Javascript",
-                            Text = "C# comment example"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ArticleID = 2,
-                            CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 876, DateTimeKind.Local).AddTicks(9485),
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 876, DateTimeKind.Local).AddTicks(9487),
-                            Note = "Javascript",
-                            Text = "C++ comment example"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ArticleID = 3,
-                            CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 876, DateTimeKind.Local).AddTicks(9491),
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 876, DateTimeKind.Local).AddTicks(9492),
-                            Note = "Javascript",
-                            Text = "Javascript comment example"
-                        });
                 });
 
             modelBuilder.Entity("NetBlog.Entities.Concreate.Role", b =>
@@ -355,59 +246,49 @@ namespace NetBlog.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CreatedByName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("ModifiedByName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("ModifiedOn")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(75)
+                        .HasColumnType("nvarchar(75)");
 
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(75)
+                        .HasColumnType("nvarchar(75)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 878, DateTimeKind.Local).AddTicks(8407),
-                            Description = "Tüm Haklara Sahip",
-                            IsActive = true,
-                            IsDeleted = false,
-                            ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 878, DateTimeKind.Local).AddTicks(8421),
-                            Name = "Admin",
-                            Note = "Admin"
-                        });
+                    b.ToTable("AspNetRoles");
+                });
+
+            modelBuilder.Entity("NetBlog.Entities.Concreate.RoleClaim", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
                 });
 
             modelBuilder.Entity("NetBlog.Entities.Concreate.User", b =>
@@ -417,99 +298,151 @@ namespace NetBlog.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CreatedByName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Firstname")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Lastname")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<string>("ModifiedByName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Note")
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("PasswordHash")
-                        .IsRequired()
-                        .HasColumnType("VARBINARY(500)");
+                    b.Property<string>("Email")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Picture")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("RoleID")
-                        .HasColumnType("int");
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("username")
-                        .IsRequired()
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Email")
-                        .IsUnique();
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
 
-                    b.HasIndex("RoleID");
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("username")
-                        .IsUnique();
+                    b.ToTable("AspNetUsers");
+                });
 
-                    b.ToTable("Users");
+            modelBuilder.Entity("NetBlog.Entities.Concreate.UserClaim", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 19, 19, 44, 54, 889, DateTimeKind.Local).AddTicks(8023),
-                            Description = "First User",
-                            Email = "semihozhan@yandex.com",
-                            Firstname = "Semih",
-                            IsActive = true,
-                            IsDeleted = false,
-                            Lastname = "Ozhan",
-                            ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 19, 19, 44, 54, 889, DateTimeKind.Local).AddTicks(8034),
-                            Note = "Admin",
-                            PasswordHash = new byte[] { 101, 49, 48, 97, 100, 99, 51, 57, 52, 57, 98, 97, 53, 57, 97, 98, 98, 101, 53, 54, 101, 48, 53, 55, 102, 50, 48, 102, 56, 56, 51, 101 },
-                            Picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSX4wVGjMQ37PaO4PdUVEAliSLi8-c2gJ1zvQ&usqp=CAU",
-                            RoleID = 1,
-                            username = "semihozhan"
-                        });
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims");
+                });
+
+            modelBuilder.Entity("NetBlog.Entities.Concreate.UserLogin", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins");
+                });
+
+            modelBuilder.Entity("NetBlog.Entities.Concreate.UserRole", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles");
+                });
+
+            modelBuilder.Entity("NetBlog.Entities.Concreate.UserToken", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens");
                 });
 
             modelBuilder.Entity("NetBlog.Entities.Concreate.Article", b =>
@@ -542,15 +475,55 @@ namespace NetBlog.Data.Migrations
                     b.Navigation("Article");
                 });
 
-            modelBuilder.Entity("NetBlog.Entities.Concreate.User", b =>
+            modelBuilder.Entity("NetBlog.Entities.Concreate.RoleClaim", b =>
                 {
-                    b.HasOne("NetBlog.Entities.Concreate.Role", "Role")
-                        .WithMany("Users")
-                        .HasForeignKey("RoleID")
+                    b.HasOne("NetBlog.Entities.Concreate.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("NetBlog.Entities.Concreate.UserClaim", b =>
+                {
+                    b.HasOne("NetBlog.Entities.Concreate.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("NetBlog.Entities.Concreate.UserLogin", b =>
+                {
+                    b.HasOne("NetBlog.Entities.Concreate.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("NetBlog.Entities.Concreate.UserRole", b =>
+                {
+                    b.HasOne("NetBlog.Entities.Concreate.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Role");
+                    b.HasOne("NetBlog.Entities.Concreate.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("NetBlog.Entities.Concreate.UserToken", b =>
+                {
+                    b.HasOne("NetBlog.Entities.Concreate.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("NetBlog.Entities.Concreate.Article", b =>
@@ -561,11 +534,6 @@ namespace NetBlog.Data.Migrations
             modelBuilder.Entity("NetBlog.Entities.Concreate.Category", b =>
                 {
                     b.Navigation("Articles");
-                });
-
-            modelBuilder.Entity("NetBlog.Entities.Concreate.Role", b =>
-                {
-                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("NetBlog.Entities.Concreate.User", b =>

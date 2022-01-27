@@ -43,7 +43,7 @@ namespace NetBlog.Data.Concreate.EntityFramework.Mappings
             builder.HasOne<User>(a => a.User).WithMany(u => u.Articles).HasForeignKey(a => a.UserId);
             builder.ToTable("Articles");
 
-            builder.HasData(new Article { 
+           /* builder.HasData(new Article { 
                 Id=1,
                 CategoryId=1,
                 IsActive = true,
@@ -110,7 +110,7 @@ namespace NetBlog.Data.Concreate.EntityFramework.Mappings
 
             }
 
-            );
+            );*/
         }
     }
 }
