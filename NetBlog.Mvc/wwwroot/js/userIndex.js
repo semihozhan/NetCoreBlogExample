@@ -279,7 +279,7 @@ $(document).ready(function () {
     });/*Datatable end here*/
 
     $(function () {
-        const url = 'Category/Add/';
+        const url = 'User/Add/';
         const placeHolderDiv = $('#modalPlaceHolder');
 
         $('#btnAdd').click(function () {
@@ -292,7 +292,7 @@ $(document).ready(function () {
 
         placeHolderDiv.on('click', '#btn-save', function (event) {
             event.preventDefault();
-            const form = $('#form-category-add');
+            const form = $('#form-user-add');
             const actionUrl = form.attr('action');
             const dataToSend = form.serialize();
             $.post(actionUrl, dataToSend).done(function (data) {
