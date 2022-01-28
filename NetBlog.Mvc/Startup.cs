@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NetBlog.Mvc.AutoMapper.Profiles;
 using NetBlog.Services.AutoMapper.Profiles;
 using NetBlog.Services.Extensions;
 using System;
@@ -32,7 +33,7 @@ namespace NetBlog.Mvc
                 opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
             });
             services.AddSession();
-            services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile));
+            services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile));
             services.LoadMyService();
 
             services.ConfigureApplicationCookie(options=> {

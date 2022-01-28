@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace NetBlog.Mvc.Areas.Admin.Controllers
@@ -37,6 +38,19 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
                 Users = users,
                 ResultStatus = ResultStatus.Success
             });
+        }
+        [HttpGet]
+        public async Task<JsonResult> GetAllUsers()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            var userListDto= JsonSerializer.Serialize(new UserListDto
+            {
+                Users = users,
+                ResultStatus = ResultStatus.Success
+            },new JsonSerializerOptions {
+                ReferenceHandler=ReferenceHandler.Preserve
+            });
+            return Json(userListDto);
         }
 
         [HttpGet]
@@ -94,7 +108,12 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
 
         public async Task<string> ImageUpload(UserAddDto userAddDto)
         {
-            string wwwroot = _env.WebRootPath;
+            
+            //if (string.IsNullOrWhiteSpace(_env.WebRootPath))
+            //{
+            //    _env.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            //}
+            string wwwroot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
             //string fileName = Path.GetFileNameWithoutExtension(userAddDto.Picture.FileName);
             string fileExtension = Path.GetExtension(userAddDto.PictureFile.FileName);
             DateTime dateTime = DateTime.Now;

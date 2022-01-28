@@ -1,6 +1,6 @@
 ﻿
 $(document).ready(function () {
-    $('#usersTable').DataTable({
+    const dataTable=$('#usersTable').DataTable({
         dom:
             "<'row'<'col-sm-3'l><'col-sm-6 text-center'B><'col-sm-3'f>>" +
             "<'row'<'col-sm-12'tr>>" +
@@ -22,51 +22,45 @@ $(document).ready(function () {
                 action: function (e, dt, node, config) {
                     $.ajax({
                         type: 'GET',
-                        url: 'Category/GetAllCategories/',
+                        url: 'User/GetAllUsers/',
                         contentType: "application/json",
                         beforeSend: function () {
-                            $('#categoriesTable').hide();
+                            $('#usersTable').hide();
                             $('.spinner-border').show();
 
                         },
                         success: function (data) {
-                            const categoryListDto = jQuery.parseJSON(data);
-                            console.log(categoryListDto);
-                            if (categoryListDto.ResultStatus === 0) {
-                                let tableBody = "";
-                                $.each(categoryListDto.Categories.$values, function (index, category) {
-                                    tableBody += `
-                                             <tr>
-                                            <td>${category.Id}</td>
-                                            <td>${category.Name}</td>
-                                            <td>${category.Description}</td>
-                                            <td>${convertFirstLetterToUpperCase(category.IsActive.toString())}</td>
-                                            <td>${convertFirstLetterToUpperCase(category.IsDeleted.toString())}</td>
-                                            <td>${category.CreatedByName}</td>
-                                            <td>${convertToShortDate(category.CreatedOn)}</td>
-                                            <td>${category.ModifiedByName}</td>
-                                            <td>${convertToShortDate(category.ModifiedOn)}</td>
-                                            <td>${category.Note}</td>
-                                            <td>
-                                                <button class="btn btn-primary btn-sm btn-block btn-update"  data-id="${category.Id}" data-update="${category.Id}"><span class="fas fa-edit"></span> Düzenle</button>
-                                                <button class="btn btn-danger btn-sm btn-block btn-delete" data-id="${category.Id}"><span class="fas fa-minus-circle"></span> Sil</button>
-                                            </td>
-                                        </tr>`;
+                            const userListDto = jQuery.parseJSON(data);
+                            dataTable.clear();
+                            console.log(userListDto);
+                            if (userListDto.ResultStatus === 0) {
+                                
+                                $.each(userListDto.Users.$values, function (index, user) {
+                                    dataTable.row.add([
+                                        user.Id,
+                                        user.UserName,
+                                        user.Email,
+                                        user.PhoneNumber,
+                                        `<img src=/img/${user.Picture}" style="max-height:50px;max-width:50px;" alt="${user.UserName}" />`,
+                                        `
+                            <button class="btn btn-primary btn-sm btn-block btn-update" data-id="${user.Id}" data-update="${user.Id}"><span class="fas fa-edit"></span> Düzenle</button>
+                            <button class="btn btn-danger btn-sm btn-block btn-delete" data-id="${user.Id}"><span class="fas fa-minus-circle"></span> Sil</button>
+                        `]).draw(false);
                                 });
-                                $('#categoriesTable > tbody').replaceWith(tableBody);
+                                
                                 $('.spinner-border').hide();
-                                $('#categoriesTable').fadeIn(2500);
+                                $('#usersTable').fadeIn(2500);
 
 
                             } else {
-                                toastr.warning(categoryListDto.Message);
+                                toastr.warning(userListDto.Message);
                                 $('.spinner-border').hide();
                             }
                         },
                         error: function (err) {
                             toastr.warning(err.statusText.toString());
                             $('.spinner-border').hide();
-                            $('#categoriesTable').fadeIn(1000);
+                            $('#usersTable').fadeIn(1000);
                         }
 
                     });
@@ -294,44 +288,45 @@ $(document).ready(function () {
             event.preventDefault();
             const form = $('#form-user-add');
             const actionUrl = form.attr('action');
-            const dataToSend = form.serialize();
-            $.post(actionUrl, dataToSend).done(function (data) {
-                const categoryAddAjaxModel = jQuery.parseJSON(data);
-                const newFormBody = $('.modal-body', categoryAddAjaxModel.CategoryAddPartial);
-                placeHolderDiv.find('.modal-body').replaceWith(newFormBody);
-                const IsValid = newFormBody.find('[name="IsValid"]').val() === 'True';
-                if (IsValid) {
-                    placeHolderDiv.find('.modal').modal('hide');
-                    const newTableRow = `
-    <tr>
-        <td>${categoryAddAjaxModel.CategoryDto.Category.Id}</td>
-        <td>${categoryAddAjaxModel.CategoryDto.Category.Name}</td>
-        <td>${categoryAddAjaxModel.CategoryDto.Category.Description}</td>
-        <td>${convertFirstLetterToUpperCase(categoryAddAjaxModel.CategoryDto.Category.IsActive.toString())}</td>
-        <td>${convertFirstLetterToUpperCase(categoryAddAjaxModel.CategoryDto.Category.IsDeleted.toString())}</td>
-        <td>${categoryAddAjaxModel.CategoryDto.Category.CreatedByName}</td>
-        <td>${convertToShortDate(categoryAddAjaxModel.CategoryDto.Category.CreatedOn)}</td>
-        <td>${categoryAddAjaxModel.CategoryDto.Category.ModifiedByName}</td>
-        <td>${convertToShortDate(categoryAddAjaxModel.CategoryDto.Category.ModifiedOn)}</td>
-        <td>${categoryAddAjaxModel.CategoryDto.Category.Note}</td>
-        <td>
-            <button class="btn btn-primary btn-sm btn-block btn-update" data-id="${categoryAddAjaxModel.CategoryDto.Category.Id}" data-update="${categoryAddAjaxModel.CategoryDto.Category.Id}"><span class="fas fa-edit"></span> Düzenle</button>
-            <button class="btn btn-danger btn-sm btn-block btn-delete" data-id="${categoryAddAjaxModel.CategoryDto.Category.Id}"><span class="fas fa-minus-circle"></span> Sil</button>
-        </td>
-    </tr>`;
-                    const newTabloRowObject = $(newTableRow);
-                    newTabloRowObject.hide();
-                    $('#categoriesTable').append(newTabloRowObject);
-                    newTabloRowObject.fadeIn(3500);
-                    toastr.success(`${categoryAddAjaxModel.CategoryDto.Message}`, 'Başarılı İşlem!')
-                } else {
-                    let summuryText = "";
-                    $('#validation-summary > ul > li').each(function () {
-                        let text = $(this).text();
-                        summuryText = `*${text}\n`;
-                    });
-                    toastr.warning(summuryText);
-                }
+            const dataToSend = new FormData(form.get(0));
+            $.ajax({
+                url: actionUrl,
+                type: 'POST',
+                data: dataToSend,
+                processData: false,
+                contentType:false,
+                success: function (data) {
+                    const userAddAjaxModel = jQuery.parseJSON(data);
+                    const newFormBody = $('.modal-body', userAddAjaxModel.CategoryAddPartial);
+                    placeHolderDiv.find('.modal-body').replaceWith(newFormBody);
+                    const IsValid = newFormBody.find('[name="IsValid"]').val() === 'True';
+                    if (IsValid) {
+                        placeHolderDiv.find('.modal').modal('hide');
+                        dataTable.row.add([
+                            userAddAjaxModel.userDto.user.Id,
+                            userAddAjaxModel.userDto.user.UserName,
+                            userAddAjaxModel.userDto.user.Email,
+                            userAddAjaxModel.userDto.user.PhoneNumber,
+                            `<img src="~/img/${userAddAjaxModel.userDto.user.Picture}" style="max-height:50px;max-width:50px;" alt="${userAddAjaxModel.userDto.user.UserName}" />`,
+                            `  <td>
+                            <button class="btn btn-primary btn-sm btn-block btn-update" data-id="${userAddAjaxModel.userDto.user.Id}" data-update="${userAddAjaxModel.userDto.user.Id}"><span class="fas fa-edit"></span> Düzenle</button>
+                            <button class="btn btn-danger btn-sm btn-block btn-delete" data-id="${userAddAjaxModel.userDto.user.Id}"><span class="fas fa-minus-circle"></span> Sil</button>
+                        </td>`
+
+                        ]).draw(false);
+                        toastr.success(`${userAddAjaxModel.userDto.Message}`, 'Başarılı İşlem!')
+                    } else {
+                        let summuryText = "";
+                        $('#validation-summary > ul > li').each(function () {
+                            let text = $(this).text();
+                            summuryText = `*${text}\n`;
+                        });
+                        toastr.warning(summuryText);
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                },
             });
 
         });
