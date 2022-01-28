@@ -59,6 +59,37 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
             return PartialView("_UserAddPartial");
         }
 
+        public async Task<JsonResult> Delete(int userID)
+        {
+            var user = await _userManager.FindByIdAsync(userID.ToString());
+            var result = await _userManager.DeleteAsync(user);
+            if (result.Succeeded)
+            {
+                var deletedUSer = JsonSerializer.Serialize(new UserDto
+                {
+                    ResultStatus= ResultStatus.Success,
+                    Message="silindi",
+                    user = user
+                });
+                return Json(deletedUSer);
+            }
+            else
+            {
+                string errorMesages = String.Empty;
+                foreach (var err in result.Errors)
+                {
+                    errorMesages = $"*{err.Description}\n";
+                }
+                var userdeletedErrorModel = JsonSerializer.Serialize(new UserDto
+                {
+                    ResultStatus = ResultStatus.Error,
+                    Message = errorMesages,
+                    user = user
+                });
+                return Json(userdeletedErrorModel);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Add(UserAddDto userAddDto)
         {

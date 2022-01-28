@@ -337,10 +337,10 @@ $(document).ready(function () {
         event.preventDefault();
         const id = $(this).attr('data-id');
         const tabloRow = $(`[name="${id}"]`);
-        const categoryName = tabloRow.find('td:eq(1)').text();
+        const userName = tabloRow.find('td:eq(1)').text();
         Swal.fire({
             title: 'Silmek istediğinize emin misin?',
-            text: categoryName + " kategori silinecektir!",
+            text: userName + " kategori silinecektir!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -352,18 +352,18 @@ $(document).ready(function () {
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
-                    data: { categoryId: id },
-                    url: 'Category/Delete/',
+                    data: { userId: id },
+                    url: 'User/Delete/',
                     success: function (data) {
-                        const categoryDto = jQuery.parseJSON(data);
-                        if (categoryDto.ResultStatus === 0) {
+                        const userDto = jQuery.parseJSON(data);
+                        if (userDto.ResultStatus === 0) {
                             Swal.fire(
                                 'Silindi!',
-                                'Kategori silinmiştir.',
+                                'User silinmiştir.',
                                 'success'
                             );
 
-                            tabloRow.fadeOut(2000);
+                            dataTable.row().remove(tabloRow).draw();
                         } else {
                             Swal.fire(
                                 'hata!',
