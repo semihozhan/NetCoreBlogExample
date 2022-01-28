@@ -33,6 +33,7 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var users = await _userManager.Users.ToListAsync();
+            
             return View(new UserListDto
             {
                 Users = users,
@@ -137,6 +138,13 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
             return Json(modelStateErrorModel);
         }
 
+        public async Task<PartialViewResult> Update(int userId)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(u=>u.Id==userId);
+            var userUpdateDto = _mapper.Map<UserUpdateDto>(user);
+            return PartialView("_UserUpdatePartial", userUpdateDto);
+        }
+
         public async Task<string> ImageUpload(UserAddDto userAddDto)
         {
             
@@ -158,6 +166,19 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
             }
 
             return fileName;
+        }
+
+        public bool ImageDelete(string pictureName)
+        {
+            
+            string wwwroot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            var fileToDelete = Path.Combine($"{wwwroot}/img",pictureName);
+            if (System.IO.File.Exists(fileToDelete))
+            {
+                System.IO.File.Delete(fileToDelete);
+                return true;
+            }
+            return false;
         }
     }
 }

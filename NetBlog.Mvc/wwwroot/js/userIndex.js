@@ -385,14 +385,14 @@ $(document).ready(function () {
 
 
     $(function () {
-        const url = 'Category/Update';
+        const url = 'User/Update';
         const placeHolderDiv = $('#modalPlaceHolder');
 
         $(document).on('click', '.btn-update', function (event) {
          
             event.preventDefault();
             const id = $(this).attr('data-id');
-            $.get(url, { categoryID: id })
+            $.get(url, { userID: id })
                 .done(function (data) {
                     placeHolderDiv.html(data);
                     placeHolderDiv.find('.modal').modal('show');
