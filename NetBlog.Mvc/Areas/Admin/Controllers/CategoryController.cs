@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NetBlog.Entities.Dtos;
 using NetBlog.Mvc.Areas.Admin.Models;
 using NetBlog.Services.Abstract;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 namespace NetBlog.Mvc.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class CategoryController : Controller
     {
         

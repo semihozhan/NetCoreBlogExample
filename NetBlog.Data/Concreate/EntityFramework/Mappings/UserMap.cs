@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NetBlog.Entities.Concreate;
 using System;
@@ -50,6 +51,45 @@ namespace NetBlog.Data.Concreate.EntityFramework.Mappings
             // Each User can have many entries in the UserRole join table
             builder.HasMany<UserRole>().WithOne().HasForeignKey(ur => ur.UserId).IsRequired();
 
+            var adminUser = new User {
+                Id = 1,
+                UserName = "adminuser",
+                NormalizedUserName = "ADMINUSER",
+                Email = "adminuser@gmail.com",
+                NormalizedEmail = "ADMINUSER@GMAIL.COM",
+                PhoneNumber = "+905555555555",
+                Picture = "defaultUser.png",
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true,
+                SecurityStamp = new Guid().ToString(),
+
+            };
+            adminUser.PasswordHash = CreatePasswordHash(adminUser, "adminuser");
+
+            var editorUser = new User
+            {
+                Id = 2,
+                UserName = "editoruser",
+                NormalizedUserName = "EDITORUSER",
+                Email = "editoruser@gmail.com",
+                NormalizedEmail = "EDITORUSER@GMAIL.COM",
+                PhoneNumber = "+905555555555",
+                Picture = "defaultUser.png",
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true,
+                SecurityStamp = new Guid().ToString(),
+
+            };
+            editorUser.PasswordHash = CreatePasswordHash(adminUser, "editoruser");
+
+            builder.HasData(adminUser, editorUser);
+
         }
+
+        private string CreatePasswordHash(User user,string password)
+        {
+            var passwordhasher = new PasswordHasher<User>();
+            return passwordhasher.HashPassword(user, password);
+        } 
     }
 }

@@ -36,7 +36,7 @@ $(document).ready(function () {
                             if (userListDto.ResultStatus === 0) {
                                 
                                 $.each(userListDto.Users.$values, function (index, user) {
-                                    dataTable.row.add([
+                                  const newTabloRow=  dataTable.row.add([
                                         user.Id,
                                         user.UserName,
                                         user.Email,
@@ -46,8 +46,9 @@ $(document).ready(function () {
                             <button class="btn btn-primary btn-sm btn-block btn-update" data-id="${user.Id}" data-update="${user.Id}"><span class="fas fa-edit"></span> Düzenle</button>
                             <button class="btn btn-danger btn-sm btn-block btn-delete" data-id="${user.Id}"><span class="fas fa-minus-circle"></span> Sil</button>
                         `]).draw(false);
-                                });
-                                
+                                }).node();
+                                const jqueryTableRow = $(newTabloRow);
+                                newTabloRow.attr('name', `${user.Id}`);
                                 $('.spinner-border').hide();
                                 $('#usersTable').fadeIn(2500);
 
@@ -407,47 +408,47 @@ $(document).ready(function () {
 
         $(document).on('click', '#btnUpdate', function (event) {
             event.preventDefault();
-            const form = $('#form-category-update');
+            const form = $('#form-user-update');
             const actionUrl = form.attr('action');
-            const dataToSend = form.serialize();
-            $.post(actionUrl, dataToSend).done(function (data) {
-                const categoryUpdateAjaxModel = jQuery.parseJSON(data);
-                console.log(data);
-                const newFromBody = $('.modal-body', categoryUpdateAjaxModel.CategoryUpdatePartial);
-                placeHolderDiv.find('.modal-body').replaceWith(newFromBody);
+            const dataToSend = new FormData(form.get(0));
+            $.ajax({
+                url: actionUrl,
+                type: 'POST',
+                data: dataToSend,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    const userUpdateAjaxModel = jQuery.parseJSON(data);
+                    console.log(data);
+                    const id = userUpdateAjaxModel.userDto.user.Id;
+                    const tableRow = $(`[name= "${id}"]`);
+                    const newFromBody = $('.modal-body', userUpdateAjaxModel.userUpdatePartial);
+                    placeHolderDiv.find('.modal-body').replaceWith(newFromBody);
 
-                const IsValid = newFromBody.find('[name="IsValid"]').val() === 'True';
-                if (IsValid) {
-                    placeHolderDiv.find('.modal').hide();
-                    const newTableRow = `
-                    <tr  name="${categoryUpdateAjaxModel.CategoryDto.Category.Id}">
-                        <td>${categoryUpdateAjaxModel.CategoryDto.Category.Id}</td>
-                        <td>${categoryUpdateAjaxModel.CategoryDto.Category.Name}</td>
-                        <td>${categoryUpdateAjaxModel.CategoryDto.Category.Description}</td>
-                        <td>${convertFirstLetterToUpperCase(categoryUpdateAjaxModel.CategoryDto.Category.IsActive.toString())}</td>
-                        <td>${convertFirstLetterToUpperCase(categoryUpdateAjaxModel.CategoryDto.Category.IsDeleted.toString())}</td>
-                        <td>${categoryUpdateAjaxModel.CategoryDto.Category.CreatedByName}</td>
-                        <td>${convertToShortDate(categoryUpdateAjaxModel.CategoryDto.Category.CreatedOn)}</td>
-                        <td>${categoryUpdateAjaxModel.CategoryDto.Category.ModifiedByName}</td>
-                        <td>${convertToShortDate(categoryUpdateAjaxModel.CategoryDto.Category.ModifiedOn)}</td>
-                        <td>${categoryUpdateAjaxModel.CategoryDto.Category.Note}</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm btn-block btn-update" data-id="${categoryUpdateAjaxModel.CategoryDto.Category.Id}" data-update="${categoryUpdateAjaxModel.CategoryDto.Category.Id}"><span class="fas fa-edit"></span> Düzenle</button>
-                            <button class="btn btn-danger btn-sm btn-block btn-delete" data-id="${categoryUpdateAjaxModel.CategoryDto.Category.Id}"><span class="fas fa-minus-circle"></span> Sil</button>
-                        </td>
-                    </tr>`;
-                    const newTableRowObject = $(newTableRow);
-                    const categoryTableRow = $(`[name=${categoryUpdateAjaxModel.CategoryDto.Category.Id}]`);
-                    newTableRowObject.hide(); 
-                    categoryTableRow.replaceWith(newTableRowObject);
-                    categoryTableRow.fadeIn(2500);
-                    toastr.success('Başarılı');
-                } else {
-                    toastr.success('hatalı');
+                    const IsValid = newFromBody.find('[name="IsValid"]').val() === 'True';
+                    if (IsValid) {
+                        placeHolderDiv.find('.modal').hide();
+                        dataTable.row(tableRow).data([
+                            userUpdateAjaxModel.userDto.user.Id,
+                            userUpdateAjaxModel.userDto.user.UserName,
+                            userUpdateAjaxModel.userDto.user.Email,
+                            userUpdateAjaxModel.userDto.user.PhoneNumber,
+                            `<img src="~/img/${userUpdateAjaxModel.userDto.user.Picture}" style="max-height:50px;max-width:50px;" alt="${userUpdateAjaxModel.userDto.user.UserName}" />`,
+                            `  <td>
+                            <button class="btn btn-primary btn-sm btn-block btn-update" data-id="${userUpdateAjaxModel.userDto.user.Id}" data-update="${userUpdateAjaxModel.userDto.user.Id}"><span class="fas fa-edit"></span> Düzenle</button>
+                            <button class="btn btn-danger btn-sm btn-block btn-delete" data-id="${userUpdateAjaxModel.userDto.user.Id}"><span class="fas fa-minus-circle"></span> Sil</button>
+                        </td>`
+
+                        ]);
+                        tableRow.attr("name", `${id}`);
+                        dataTable.row(tabloRow).invalidate();
+                        toastr.success('Başarılı');
+                    } else {
+                        toastr.success('hatalı');
+                    }
+                }, error: function (error) {
+                    console.log(error);
                 }
-
-            }).fail(function (response) {
-                console.log(response);
             });
 
         });
