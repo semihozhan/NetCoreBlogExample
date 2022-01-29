@@ -414,3 +414,4 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Raz
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\_UserUpdatePartial.cshtml.g.cs
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_UserLoginLayout.cshtml.g.cs
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\UserLogin.cshtml.g.cs
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\AccessDenied.cshtml.g.cs

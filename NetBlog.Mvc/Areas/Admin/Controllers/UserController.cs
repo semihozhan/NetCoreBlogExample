@@ -34,7 +34,7 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
             _mapper = mapper;
             _signInManager = signInManager;
         }
-       [Authorize]
+       [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Index()
         {
             var users = await _userManager.Users.ToListAsync();
@@ -84,7 +84,7 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
             
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<JsonResult> GetAllUsers()
         {
@@ -99,12 +99,13 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
             return Json(userListDto);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public  IActionResult Add()
         {
             return PartialView("_UserAddPartial");
         }
-
+        [Authorize(Roles = "Admin")]
         public async Task<JsonResult> Delete(int userID)
         {
             var user = await _userManager.FindByIdAsync(userID.ToString());
@@ -135,7 +136,7 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
                 return Json(userdeletedErrorModel);
             }
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Add(UserAddDto userAddDto)
         {
@@ -182,6 +183,8 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
             });
             return Json(modelStateErrorModel);
         }
+
+
         [HttpGet]
         public async Task<PartialViewResult> Update(int userId)
         {
@@ -267,6 +270,11 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
             }
 
             return fileName;
+        }
+        [HttpGet]
+        public ViewResult AccessDenied()
+        {
+            return View("AccessDenied");
         }
 
         public bool ImageDelete(string pictureName)

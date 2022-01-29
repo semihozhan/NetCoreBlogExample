@@ -246,19 +246,42 @@ namespace NetBlog.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "CreatedByName", "CreatedOn", "Description", "IsActive", "IsDeleted", "ModifiedByName", "ModifiedOn", "Name", "Note" },
-                values: new object[] { 1, "InitialCreate", new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(1716), "c# Category", true, false, "InitialCreate", new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2320), "c#", "c#" });
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { 1, "831db9fd-f5e0-46f3-8174-29411d4c9a06", "Admin", "ADMIN" },
+                    { 2, "4f53aa91-1f8f-44a7-85ac-a4bba668dc96", "Editor", "EDITOR" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Picture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { 1, 0, "8902adb8-3e8b-4810-ae2d-cb09ebfb7a4f", "adminuser@gmail.com", true, false, null, "ADMINUSER@GMAIL.COM", "ADMINUSER", "AQAAAAEAACcQAAAAEAnW+68DhQctS+7mw+HEwcfOSNTo+HsCEj0DnlnIHZ5yQbHEJH7ruSt1HejWrQtC5g==", "+905555555555", true, "defaultUser.png", "00000000-0000-0000-0000-000000000000", false, "adminuser" },
+                    { 2, 0, "c5f88879-9684-4341-987b-7eaf808ad439", "editoruser@gmail.com", true, false, null, "EDITORUSER@GMAIL.COM", "EDITORUSER", "AQAAAAEAACcQAAAAEMsPJcxqSRuGYE8yp4QqHF3098X152mEkeUbbLhtm0xzhwwR7Om5WDyWJ9OhA47SJg==", "+905555555555", true, "defaultUser.png", "00000000-0000-0000-0000-000000000000", false, "editoruser" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedByName", "CreatedOn", "Description", "IsActive", "IsDeleted", "ModifiedByName", "ModifiedOn", "Name", "Note" },
-                values: new object[] { 2, "InitialCreate", new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2864), "c++ Category", true, false, "InitialCreate", new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2866), "c++", "c++" });
+                values: new object[,]
+                {
+                    { 1, "InitialCreate", new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(7927), "c# Category", true, false, "InitialCreate", new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8314), "c#", "c#" },
+                    { 2, "InitialCreate", new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8656), "c++ Category", true, false, "InitialCreate", new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8657), "c++", "c++" },
+                    { 3, "InitialCreate", new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8661), "Javascript Category", true, false, "InitialCreate", new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8663), "Javascript", "Javascript" }
+                });
 
             migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "CreatedByName", "CreatedOn", "Description", "IsActive", "IsDeleted", "ModifiedByName", "ModifiedOn", "Name", "Note" },
-                values: new object[] { 3, "InitialCreate", new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2872), "Javascript Category", true, false, "InitialCreate", new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2874), "Javascript", "Javascript" });
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { 1, 1 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { 2, 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Articles_CategoryId",

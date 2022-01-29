@@ -10,7 +10,7 @@ using NetBlog.Data.Concreate.EntityFramework.Contexts;
 namespace NetBlog.Data.Migrations
 {
     [DbContext(typeof(NetBlogContext))]
-    [Migration("20220126181248_InitialCreate")]
+    [Migration("20220129104028_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -157,12 +157,12 @@ namespace NetBlog.Data.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(1716),
+                            CreatedOn = new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(7927),
                             Description = "c# Category",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2320),
+                            ModifiedOn = new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8314),
                             Name = "c#",
                             Note = "c#"
                         },
@@ -170,12 +170,12 @@ namespace NetBlog.Data.Migrations
                         {
                             Id = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2864),
+                            CreatedOn = new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8656),
                             Description = "c++ Category",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2866),
+                            ModifiedOn = new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8657),
                             Name = "c++",
                             Note = "c++"
                         },
@@ -183,12 +183,12 @@ namespace NetBlog.Data.Migrations
                         {
                             Id = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2872),
+                            CreatedOn = new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8661),
                             Description = "Javascript Category",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedOn = new DateTime(2022, 1, 26, 21, 12, 48, 177, DateTimeKind.Local).AddTicks(2874),
+                            ModifiedOn = new DateTime(2022, 1, 29, 13, 40, 28, 89, DateTimeKind.Local).AddTicks(8663),
                             Name = "Javascript",
                             Note = "Javascript"
                         });
@@ -268,6 +268,22 @@ namespace NetBlog.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ConcurrencyStamp = "831db9fd-f5e0-46f3-8174-29411d4c9a06",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ConcurrencyStamp = "4f53aa91-1f8f-44a7-85ac-a4bba668dc96",
+                            Name = "Editor",
+                            NormalizedName = "EDITOR"
+                        });
                 });
 
             modelBuilder.Entity("NetBlog.Entities.Concreate.RoleClaim", b =>
@@ -363,6 +379,44 @@ namespace NetBlog.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8902adb8-3e8b-4810-ae2d-cb09ebfb7a4f",
+                            Email = "adminuser@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMINUSER@GMAIL.COM",
+                            NormalizedUserName = "ADMINUSER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAnW+68DhQctS+7mw+HEwcfOSNTo+HsCEj0DnlnIHZ5yQbHEJH7ruSt1HejWrQtC5g==",
+                            PhoneNumber = "+905555555555",
+                            PhoneNumberConfirmed = true,
+                            Picture = "defaultUser.png",
+                            SecurityStamp = "00000000-0000-0000-0000-000000000000",
+                            TwoFactorEnabled = false,
+                            UserName = "adminuser"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c5f88879-9684-4341-987b-7eaf808ad439",
+                            Email = "editoruser@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "EDITORUSER@GMAIL.COM",
+                            NormalizedUserName = "EDITORUSER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMsPJcxqSRuGYE8yp4QqHF3098X152mEkeUbbLhtm0xzhwwR7Om5WDyWJ9OhA47SJg==",
+                            PhoneNumber = "+905555555555",
+                            PhoneNumberConfirmed = true,
+                            Picture = "defaultUser.png",
+                            SecurityStamp = "00000000-0000-0000-0000-000000000000",
+                            TwoFactorEnabled = false,
+                            UserName = "editoruser"
+                        });
                 });
 
             modelBuilder.Entity("NetBlog.Entities.Concreate.UserClaim", b =>
@@ -424,6 +478,18 @@ namespace NetBlog.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            RoleId = 2
+                        });
                 });
 
             modelBuilder.Entity("NetBlog.Entities.Concreate.UserToken", b =>
