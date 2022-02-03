@@ -20,7 +20,11 @@ namespace NetBlog.Services.Abstract
         Task<IDataResult<CategoryListDto>> GetAllByNonDeleted();
 
         Task<IDataResult<CategoryListDto>> GetAllByNonDeletedandActive();
-
+        /// <summary>
+        /// Kategori ekler
+        /// </summary>
+        /// <param name="category">dto nesnesi</param>
+        /// <returns>geriye dto tipinde dataresult döner </returns>
         Task<IDataResult<CategoryDto>> Add(CategoryAddDto category,string CreatedByName);
 
         Task<IDataResult<CategoryDto>> Update(CategoryUpdateDto category,string ModifiedByName);

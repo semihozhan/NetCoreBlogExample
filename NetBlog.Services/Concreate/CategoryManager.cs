@@ -24,6 +24,12 @@ namespace NetBlog.Services.Concreate
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+
+        /// <summary>
+        /// Kategori ekler
+        /// </summary>
+        /// <param name="category">dto nesnesi</param>
+        /// <returns>geriye dto tipinde dataresult döner </returns>
         public async Task<IDataResult<CategoryDto>> Add(CategoryAddDto category, string CreatedByName)
         {
 

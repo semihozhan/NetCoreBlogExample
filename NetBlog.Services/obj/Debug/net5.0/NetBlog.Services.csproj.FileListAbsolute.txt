@@ -17,3 +17,4 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Services\bin\Debug\net5.
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Services\bin\Debug\net5.0\NetBlog.Entities.pdb
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Services\bin\Debug\net5.0\NetBlog.Shared.pdb
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Services\obj\Debug\net5.0\NetBlog.Services.csproj.CopyComplete
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Services\bin\Debug\net5.0\NetBlog.Services.xml
