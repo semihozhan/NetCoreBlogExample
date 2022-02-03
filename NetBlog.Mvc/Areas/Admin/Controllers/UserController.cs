@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using NetBlog.Entities.Concreate;
 using NetBlog.Entities.Dtos;
 using NetBlog.Mvc.Areas.Admin.Models;
+using NetBlog.Mvc.Helpers.Abstract;
 using NetBlog.Shared.Utilities.Extensions;
 using NetBlog.Shared.Utilities.Results.ComplexTypes;
 using System;
@@ -25,14 +26,15 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly IWebHostEnvironment _env;
         private readonly IMapper _mapper;
+        private readonly IImageHelper _imageHelper;
 
-        public UserController(UserManager<User> userManager,IMapper mapper, SignInManager<User> signInManager)
+        public UserController(UserManager<User> userManager,IMapper mapper, SignInManager<User> signInManager, IImageHelper imageHelper)
         {
             _userManager=userManager;
             _mapper = mapper;
             _signInManager = signInManager;
+            _imageHelper = imageHelper;
         }
        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Index()
@@ -153,7 +155,8 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                userAddDto.Picture = await ImageUpload(userAddDto.UserName, userAddDto.PictureFile);
+                var UploadedUserImageDtoResult = await _imageHelper.UploadedUserImage(userAddDto.UserName, userAddDto.PictureFile);
+                userAddDto.Picture = UploadedUserImageDtoResult.ResultStatus==ResultStatus.Success? UploadedUserImageDtoResult.Data.FullName : "userImages/defaultUser.png";
                 var user= _mapper.Map<User>(userAddDto);
                 var result = await _userManager.CreateAsync(user, userAddDto.Password);
                 if (result.Succeeded)
@@ -213,7 +216,8 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
                 var oldUserPicture = oldUser.Picture;
                 if (userUpdateDto.PictureFile!=null)
                 {
-                    userUpdateDto.Picture =await  ImageUpload(userUpdateDto.UserName, userUpdateDto.PictureFile);
+                    var UploadedUserImageDtoResult = await _imageHelper.UploadedUserImage(userUpdateDto.UserName, userUpdateDto.PictureFile);
+                    userUpdateDto.Picture = UploadedUserImageDtoResult.ResultStatus == ResultStatus.Success ? UploadedUserImageDtoResult.Data.FullName : "userImages/defaultUser.png";
                     isNewPictureUploaded = true;
                 }
                 var updatedUser = _mapper.Map<UserUpdateDto,User>(userUpdateDto, oldUser);
@@ -222,7 +226,7 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
                 {
                     if (isNewPictureUploaded)
                     {
-                        ImageDelete(oldUserPicture);
+                        _imageHelper.Detele(oldUserPicture);
                     }
                     var userUpdateViewmodel = JsonSerializer.Serialize(new UserUpdateAjavViewModel
                     {
@@ -280,8 +284,9 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
                 var oldUserPicture = oldUser.Picture;
                 if (userUpdateDto.PictureFile != null)
                 {
-                    userUpdateDto.Picture = await ImageUpload(userUpdateDto.UserName, userUpdateDto.PictureFile);
-                    if(oldUserPicture!= "defaultUser.png")
+                    var UploadedUserImageDtoResult = await _imageHelper.UploadedUserImage(userUpdateDto.UserName, userUpdateDto.PictureFile);
+                    userUpdateDto.Picture = UploadedUserImageDtoResult.ResultStatus == ResultStatus.Success ? UploadedUserImageDtoResult.Data.FullName : "userImages/defaultUser.png";
+                    if (oldUserPicture!= "userImages/defaultUser.png")
                     {
                         isNewPictureUploaded = true;
                     }
@@ -293,7 +298,7 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
                 {
                     if (isNewPictureUploaded)
                     {
-                        ImageDelete(oldUserPicture);
+                        _imageHelper.Detele(oldUserPicture);
                     }
                     TempData.Add("successMessage", "güncellendi");
                     return View(userUpdateDto);
@@ -350,45 +355,15 @@ namespace NetBlog.Mvc.Areas.Admin.Controllers
             return View(userPasswordChangeDto);
         }
 
-        public async Task<string> ImageUpload(string username,IFormFile pictureFile)
-        {
-            
-            //if (string.IsNullOrWhiteSpace(_env.WebRootPath))
-            //{
-            //    _env.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-            //}
-            string wwwroot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-            //string fileName = Path.GetFileNameWithoutExtension(userAddDto.Picture.FileName);
-            string fileExtension = Path.GetExtension(pictureFile.FileName);
-            DateTime dateTime = DateTime.Now;
-            string fileName = $"{username}_{DateTimeExtensions.FullDateandTimeStringwithUnderscore(dateTime)}{fileExtension}";
-
-            var path = Path.Combine($"{wwwroot}/img",fileName);
-
-            await using (var stream = new FileStream(path,FileMode.Create))
-            {
-                await pictureFile.CopyToAsync(stream);
-            }
-
-            return fileName;
-        }
         [HttpGet]
         public ViewResult AccessDenied()
         {
             return View("AccessDenied");
         }
 
-        public bool ImageDelete(string pictureName)
-        {
-            
-            string wwwroot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-            var fileToDelete = Path.Combine($"{wwwroot}/img",pictureName);
-            if (System.IO.File.Exists(fileToDelete))
-            {
-                System.IO.File.Delete(fileToDelete);
-                return true;
-            }
-            return false;
-        }
+ 
+      
+
+       
     }
 }

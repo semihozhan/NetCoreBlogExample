@@ -27,6 +27,10 @@ namespace NetBlog.Services.Abstract
         Task<IDataResult<CategoryDto>> Delete(int categoryID, string ModifiedByName);
 
         Task<IResult> HardDelete(int categoryID);
+
+        Task<IDataResult<int>> Count();
+
+        Task<IDataResult<int>> CountByIsDeleted();
     }
 
 }

@@ -420,8 +420,11 @@ $(document).ready(function () {
                 success: function (data) {
                     const userUpdateAjaxModel = jQuery.parseJSON(data);
                     console.log(data);
-                    const id = userUpdateAjaxModel.userDto.user.Id;
-                    const tableRow = $(`[name= "${id}"]`);
+                    if (userUpdateAjaxModel.userDto != null) {
+                        const id = userUpdateAjaxModel.userDto.user.Id;
+                        const tableRow = $(`[name= "${id}"]`);
+                    }
+                    
                     const newFromBody = $('.modal-body', userUpdateAjaxModel.userUpdatePartial);
                     placeHolderDiv.find('.modal-body').replaceWith(newFromBody);
 

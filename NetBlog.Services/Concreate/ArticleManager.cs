@@ -38,6 +38,32 @@ namespace NetBlog.Services.Concreate
             return new Result(ResultStatus.Success,$"{article.Title} başlıklı makale eklenmiştir.");
         }
 
+        public async Task<IDataResult<int>> Count()
+        {
+            var categoriesCount = await _unitOfWork.Articles.CountAsync();
+            if (categoriesCount > -1)
+            {
+                return new DataResult<int>(ResultStatus.Success, categoriesCount);
+            }
+            else
+            {
+                return new DataResult<int>(ResultStatus.Success, "hata", -1);
+            }
+        }
+
+        public async Task<IDataResult<int>> CountByIsDeleted()
+        {
+            var categoriesCount = await _unitOfWork.Articles.CountAsync(c=>!c.IsDeleted);
+            if (categoriesCount > -1)
+            {
+                return new DataResult<int>(ResultStatus.Success, categoriesCount);
+            }
+            else
+            {
+                return new DataResult<int>(ResultStatus.Success, "hata", -1);
+            }
+        }
+
         public async Task<IResult> Delete(int articleID, string ModifiedByName)
         {
             var result = await _unitOfWork.Articles.AnyAsync(a=>a.Id==articleID);

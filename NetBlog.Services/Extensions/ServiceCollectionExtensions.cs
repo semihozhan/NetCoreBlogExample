@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using NetBlog.Data.Abstract;
 using NetBlog.Data.Concreate;
 using NetBlog.Data.Concreate.EntityFramework.Contexts;
@@ -15,9 +16,9 @@ namespace NetBlog.Services.Extensions
 {
     public static class ServiceCollectionExtensions 
     {
-        public static IServiceCollection LoadMyService(this IServiceCollection serviceCollection)
+        public static IServiceCollection LoadMyService(this IServiceCollection serviceCollection,string connectionString)
         {
-            serviceCollection.AddDbContext<NetBlogContext>();
+            serviceCollection.AddDbContext<NetBlogContext>(options => options.UseSqlServer(connectionString));
             serviceCollection.AddIdentity<User,Role>(options => {
                 //password option
                 options.Password.RequireDigit = false;
@@ -35,7 +36,7 @@ namespace NetBlog.Services.Extensions
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped<ICategoryService, CategoryManager>();
             serviceCollection.AddScoped<IArticleService, ArticleManager>();
-
+            serviceCollection.AddScoped<ICommentService, CommentManager>();
             return serviceCollection;
         }
     }

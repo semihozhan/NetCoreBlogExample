@@ -2,7 +2,6 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\bin\Debug\net5.0\
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\bin\Debug\net5.0\NetBlog.Shared.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\bin\Debug\net5.0\ref\NetBlog.Shared.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\bin\Debug\net5.0\NetBlog.Shared.pdb
-C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\obj\Debug\net5.0\NetBlog.Shared.csproj.AssemblyReference.cache
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\obj\Debug\net5.0\NetBlog.Shared.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\obj\Debug\net5.0\NetBlog.Shared.AssemblyInfoInputs.cache
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\obj\Debug\net5.0\NetBlog.Shared.AssemblyInfo.cs
@@ -10,3 +9,4 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\obj\Debug\net5.0\
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\obj\Debug\net5.0\NetBlog.Shared.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\obj\Debug\net5.0\ref\NetBlog.Shared.dll
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\obj\Debug\net5.0\NetBlog.Shared.pdb
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Shared\obj\Debug\net5.0\NetBlog.Shared.csproj.AssemblyReference.cache

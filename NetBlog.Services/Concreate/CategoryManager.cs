@@ -39,6 +39,32 @@ namespace NetBlog.Services.Concreate
             });
         }
 
+        public async Task<IDataResult<int>> Count()
+        {
+            var categoriesCount = await _unitOfWork.Categories.CountAsync();
+            if (categoriesCount>-1)
+            {
+                return new DataResult<int>(ResultStatus.Success, categoriesCount);
+            }
+            else
+            {
+                return new DataResult<int>(ResultStatus.Success,"hata" ,-1);
+            }
+        }
+
+        public async Task<IDataResult<int>> CountByIsDeleted()
+        {
+            var categoriesCount = await _unitOfWork.Categories.CountAsync(c => !c.IsDeleted);
+            if (categoriesCount > -1)
+            {
+                return new DataResult<int>(ResultStatus.Success, categoriesCount);
+            }
+            else
+            {
+                return new DataResult<int>(ResultStatus.Success, "hata", -1);
+            }
+        }
+
         public async Task<IDataResult<CategoryDto>> Delete(int categoryID, string ModifiedByName)
         {
             var category = await _unitOfWork.Categories.GetAsync(c => c.Id == categoryID);

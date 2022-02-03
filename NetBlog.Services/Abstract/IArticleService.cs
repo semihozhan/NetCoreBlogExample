@@ -26,5 +26,9 @@ namespace NetBlog.Services.Abstract
         Task<IResult> Delete(int articleID, string ModifiedByName);
 
         Task<IResult> HardDelete(int articleID);
+
+        Task<IDataResult<int>> Count();
+
+        Task<IDataResult<int>> CountByIsDeleted();
     }
 }

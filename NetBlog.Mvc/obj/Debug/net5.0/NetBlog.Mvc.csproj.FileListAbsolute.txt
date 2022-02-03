@@ -418,3 +418,4 @@ C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Raz
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\Components\UserMenu\Default.cshtml.g.cs
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\ChangeDetails.cshtml.g.cs
 C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\PasswordChange.cshtml.g.cs
+C:\Users\semih.ozhan\Desktop\NetCoreBlogExample\NetBlog.Mvc\obj\Debug\net5.0\Razor\Views\Shared\_ComingSoonLayout.cshtml.g.cs

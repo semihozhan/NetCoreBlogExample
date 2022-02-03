@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+eqXtwbgzC8jfoRsjm/53VjujSDfIkYs5N3bB0UPX7OEnaLSMtgdnRSa21TGb/QVWjWilXmpCyWXdCTfqEpeMw==",
+  "dgSpecHash": "riyVimkH8m/U8eNBUdrvTga32kfnnlhwYXIY97wgpS1EH9ast5JqPPNQW9wjskIqNhBuliNgxCdo3V6YiRrM1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\semih.ozhan\\Desktop\\NetCoreBlogExample\\NetBlog.Mvc\\NetBlog.Mvc.csproj",
   "expectedPackageFiles": [
@@ -200,8 +200,7 @@
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\semih.ozhan\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\semih.ozhan\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\semih.ozhan\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+    "C:\\Users\\semih.ozhan\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

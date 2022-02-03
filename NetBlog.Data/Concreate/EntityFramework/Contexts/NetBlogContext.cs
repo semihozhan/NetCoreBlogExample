@@ -15,13 +15,17 @@ namespace NetBlog.Data.Concreate.EntityFramework.Contexts
         public DbSet<Article> Articles { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
-       
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public NetBlogContext(DbContextOptions<NetBlogContext> dbContextOptions) : base(dbContextOptions)
         {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=localhost; Database=NetBlog; uid=sa ; pwd=S3mih.12");
+
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    base.OnConfiguring(optionsBuilder);
+        //    optionsBuilder.UseSqlServer("Server=localhost; Database=NetBlog; uid=sa ; pwd=S3mih.12");
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

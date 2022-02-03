@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NetBlog.Mvc.AutoMapper.Profiles;
+using NetBlog.Mvc.Helpers.Abstract;
+using NetBlog.Mvc.Helpers.Concreate;
 using NetBlog.Services.AutoMapper.Profiles;
 using NetBlog.Services.Extensions;
 using System;
@@ -34,8 +36,8 @@ namespace NetBlog.Mvc
             });
             services.AddSession();
             services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile), typeof(UserProfile));
-            services.LoadMyService();
-
+            services.LoadMyService(connectionString: Configuration.GetConnectionString("LocalDB"));
+            services.AddScoped<IImageHelper, ImageHelper>();
             services.ConfigureApplicationCookie(options=> {
                 options.LoginPath = new PathString("/Admin/User/Login");
                 options.LogoutPath = new PathString("/Admin/User/Logout");
